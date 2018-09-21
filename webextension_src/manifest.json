@@ -1,0 +1,26 @@
+{
+  "description": "blocks sites",
+  "manifest_version": 2,
+  "name": "TimeSaver",
+  "version": "1.6",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "webRequestBlocking",
+    "webRequest"
+  ],
+  "background": {
+    "scripts": [
+      "config.js",
+      "main.js"
+    ]
+  },
+  "applications": {
+    "gecko": {
+      "id": "myextensionname@example.com"
+    }
+  }
+}

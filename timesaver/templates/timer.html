@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='darklybootstrap.min.css')}}">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='fontawesome/css/all.css')}}">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='timer.css')}}">
+
+</head>
+
+<body>
+    {% raw %}
+    <div id="app">
+        <div class="container justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center">
+                <p id="active-day">Active Day: {{dateStr}}</p>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <div class="card time-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hours</h5>
+                        <div class="time-alert alert alert-primary">{{ hours }}</div>
+                    </div>
+                </div>
+                <div class="card time-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Minutes</h5>
+                        <div class="time-alert alert alert-primary">{{minutes}}</div>
+                    </div>
+                </div>
+                <div class="card time-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Seconds</h5>
+                        <div class="time-alert alert alert-primary">{{seconds}}</div>
+                    </div>
+                </div>
+                <div id="play-control" v-on:click="onPlayClick" v-if="!isPlaying">
+                    <i class="far fa-play-circle"></i>
+                </div>
+                <div id="pause-control" v-on:click="onPauseClick" v-else>
+                    <i class="far fa-pause-circle"></i>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <div class="card" id="history-info">
+                    <div class="panel-body">
+                        <p>{{sevenDay}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endraw %}
+    <script>
+        //Data from server-side:
+        let weekday = "{{weekday}}";
+        let day = {{day}};
+        let month = "{{month}}";
+        let month_num = {{month_num}};
+        let year = {{year}};
+        let startTime = {{start_time}};
+        let sevenDay = {{seven_day}};
+    </script>
+    <script src="{{url_for('static', filename='vue.min.js')}}"></script>
+    <script src="{{url_for('static', filename='timer.js')}}"></script>
+</body>
+
+</html>

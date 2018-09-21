@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Page was blocked</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='darklybootstrap.min.css')}}">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='fontawesome/css/all.css')}}">
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='blocked.css')}}">
+</head>
+
+<body>
+    
+    <div id="app">
+        <div class="container justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center">
+                Page was blocked.
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <input id="txt-input" type="text" v-on:keyup.enter="checkText">
+                <button class="btn btn-success" v-on:click="checkText">Confirm</button>
+            </div>
+            <div class="row justify-content-center align-items-center">
+                {% raw %}<p>{{confirm_msg}}</p>{% endraw %}
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        //Data from server-side:
+        let page_url = "{{url}}";
+        let confirm_msg = "{{confirm_msg}}";
+        let rand_len = {{rand_len}};
+    </script>
+    <script src="{{url_for('static', filename='vue.min.js')}}"></script>
+    <script src="{{url_for('static', filename='blocked.js')}}"></script>
+</body>
+
+</html>

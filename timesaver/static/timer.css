@@ -1,0 +1,37 @@
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    padding-top: 1%;
+}
+
+.time-alert {
+    font-size: 20vmin;
+}
+
+.time-card {
+    padding: 1%;
+}
+
+#play-control {
+    font-size: 15vmin;
+    padding-left: 3%;
+}
+
+#pause-control {
+    font-size: 15vmin;
+    padding-left: 3%;
+    /* display: none; */
+}
+
+#active-day {
+    font-size: 5vmin;
+}
+
+#history-info {
+    font-size: 3vmin;
+    padding: 1%;
+    margin: 1%;
+}
