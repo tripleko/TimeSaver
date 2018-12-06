@@ -2,7 +2,7 @@ Web extension and a localhost time logger that blocks listed websites until a we
 
 The reality is that it's way too easy to get caught up in the rabbit hole of social media and other internet distractions, but at the same time, it's not practical to completely cut myself off from the web when I need to get work done. There are way too many useful docs and pages.
 
-This isn't a particularly complex solution nor a one size fits all, but it works great for me. It blocks me off from distracting sites when I haven't met my personal work quota but at the same time allows me to briefly view pages related to stuff like code workarounds when I need to, even if they appear on normally blocked sites like reddit.com/r/python or the like. It's not hard to cheat and get around the block if I really want to, but I've generally been pretty good about staying honest.
+This isn't a particularly complex solution nor a one size fits all, but it works great for me. It blocks me off from distracting sites when I haven't met my personal work quota but at the same time allows me to briefly view pages related to stuff like code workarounds when I need to, even if they appear on normally blocked sites like [reddit.com/r/python](https://www.reddit.com/r/python) or the like. It's not hard to cheat and get around the block if I really want to, but I've generally been pretty good about staying honest.
 
 Out of all of my personal projects, this has easily been among the most useful to me.
 
