@@ -15,7 +15,7 @@ def get_time(day, month, year):
     msTime INTEGER)""")
 
     date = f"{str(day)}-{str(month)}-{str(year)}"
-    cur.execute(f"SELECT msTime FROM timeWorked WHERE date='{date}'")
+    cur.execute(f"SELECT msTime FROM timeWorked WHERE date=?", (date,))
     
     result = cur.fetchone()
 
@@ -39,11 +39,10 @@ def update_date(day, month, year, time_worked):
     msTime INTEGER)""")
 
     # UPSERT requires SQLIte 3.24+
+    date = f"{str(day)}-{str(month)}-{str(year)}"
     cur.execute("""INSERT INTO timeWorked (date, msTime)
-    VALUES('""" + str(day) + "-" + str(month) + "-" + str(year)
-    + "', " + str(time_worked) + ") "
-    + """ON CONFLICT (date) DO UPDATE SET msTime=excluded.msTime""")
-
+    VALUES(?, ?) ON CONFLICT (date) DO UPDATE SET msTime=excluded.msTime""",
+    (date, time_worked,))
     con.commit()
 
     con.close()
